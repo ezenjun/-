@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import Nav from '@/components/Nav';
 import './globals.css';
 
 const geistSans = localFont({
@@ -26,9 +27,15 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col h-screen`}
       >
-        {children}
+        <Nav />
+        <main className='flex flex-col items-center p-4 h-full overflow-y-scroll'>
+          {children}
+        </main>
+        <footer className='flex justify-center  border-t-2 w-full '>
+          hanaro 4
+        </footer>
       </body>
     </html>
   );
